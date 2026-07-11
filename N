@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>چشتی صابری 312</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --navy:#1c2b3a;
+      --navy2:#243447;
+      --cream:#f5f0e8;
+      --parch:#ede5d8;
+      --gold:#c9a84c;
+      --gold-lt:#e0c47a;
+      --ink:#1a1410;
+      --soft:#4a3f35;
+      --faint:#8a7a6e;
+      --rule:#d0c8be;
+      --green:#2d5a3d;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Cairo',serif;background:var(--cream);color:var(--ink);line-height:2;font-size:16px}
+
+    /* ── NAV ── */
+    nav{
+      background:var(--navy);
+      height:56px;display:flex;align-items:center;
+      justify-content:space-between;padding:0 2rem;
+      position:sticky;top:0;z-index:300;
+      border-bottom:2px solid var(--gold);
+    }
+    .nav-brand{
+      font-family:'Amiri',serif;font-size:1.3rem;
+      color:var(--gold-lt);letter-spacing:.02em;
+    }
+    .nav-links{display:flex;gap:0;list-style:none}
+    .nav-links li a{
+      display:block;padding:.4rem 1.1rem;
+      color:#aab4be;text-decoration:none;
+      font-size:.88rem;transition:all .2s;
+      border-left:1px solid #2e3f50;
+    }
+    .nav-links li:last-child a{border-left:none}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold-lt);background:rgba(201,168,76,.08)}
+
+    /* ── HERO ── */
+    .hero{
+      background:var(--navy);
+      position:relative;overflow:hidden;
+      min-height:380px;display:flex;align-items:center;
+    }
+    .hero-arabesque{
+      position:absolute;right:50%;top:50%;
+      transform:translate(50%,-50%);
+      width:580px;opacity:.045;pointer-events:none;
+    }
+    .hero-calli{
+      position:absolute;left:0;top:50%;
+      transform:translateY(-50%);
+      width:300px;opacity:.12;pointer-events:none;
+    }
+    .hero-content{
+      position:relative;z-index:2;
+      padding:3.5rem 2rem 3.5rem 3rem;
+      max-width:580px;margin-right:auto;
+    }
+    .hero-eyebrow{
+      font-size:.72rem;letter-spacing:.18em;
+      color:var(--gold);text-transform:uppercase;margin-bottom:.8rem;
+    }
+    .hero-title{
+      font-family:'Amiri',serif;
+      font-size:clamp(2rem,5vw,3.4rem);
+      color:#ede8de;line-height:1.4;font-weight:700;
+    }
+    .hero-subtitle{
+      margin-top:.5rem;font-family:'Amiri',serif;
+      font-size:1.1rem;color:var(--gold-lt);font-style:italic;
+    }
+    .hero-divider{width:80px;height:2px;background:var(--gold);margin:1.2rem 0;opacity:.7}
+    .hero-address{
+      font-size:.82rem;color:#6a7d8e;line-height:1.8;
+      border-right:2px solid var(--gold);padding-right:.8rem;
+      margin-top:.5rem;
+    }
+
+    /* ── PAGES ── */
+    .page{display:none}
+    .page.active{display:block}
+
+    /* ── CONTAINER ── */
+    .container{max-width:860px;margin:0 auto;padding:0 1.5rem}
+
+    /* ── SECTION TITLE ── */
+    .sec-title{
+      font-family:'Amiri',serif;
+      font-size:1.6rem;color:var(--navy);
+      padding:2rem 0 .5rem;
+      border-bottom:2px solid var(--gold);
+      margin-bottom:1.5rem;
+      position:relative;
+    }
+    .sec-title::after{
+      content:'';display:block;width:60px;height:2px;
+      background:var(--gold-lt);margin-top:4px;
+    }
+
+    /* ── ADAB PAGE ── */
+    .content-block{
+      background:#fff;border-radius:2px;
+      padding:2rem 2.2rem;margin-bottom:1.5rem;
+      border-right:4px solid var(--gold);
+      box-shadow:0 1px 6px rgba(0,0,0,.06);
+      font-size:.97rem;color:var(--soft);line-height:2.1;
+    }
+    .content-block p{margin-bottom:1rem}
+    .content-block p:last-child{margin-bottom:0}
+
+    /* verse blocks */
+    .verse-block{
+      background:var(--navy);
+      padding:1.4rem 1.8rem;margin:1.4rem 0;
+      position:relative;overflow:hidden;
+    }
+    .verse-block::before{
+      content:'';position:absolute;right:0;top:0;bottom:0;
+      width:3px;background:var(--gold);
+    }
+    .verse-row{
+      display:flex;justify-content:space-between;
+      gap:2rem;flex-wrap:wrap;
+      font-family:'Amiri',serif;font-size:1.1rem;
+      color:#ddd5c8;font-style:italic;line-height:2;
+    }
+    .verse-row span{flex:1;min-width:160px}
+    .verse-translation{
+      font-size:.82rem;color:#8a9aa8;margin-top:.5rem;
+      font-family:'Cairo',sans-serif;font-style:normal;
+      border-top:1px solid #2e3f50;padding-top:.5rem;
+    }
+
+    /* ── SHAJRA PAGE ── */
+    .shajra-intro{
+      background:var(--navy);color:#ddd5c8;
+      padding:2rem 2.2rem;margin-bottom:2rem;
+      font-family:'Amiri',serif;font-size:1.05rem;
+      line-height:2;text-align:center;position:relative;overflow:hidden;
+    }
+    .shajra-intro .bismillah{
+      font-size:1.6rem;color:var(--gold-lt);
+      display:block;margin-bottom:.8rem;font-weight:700;
+    }
+    .shajra-intro .haq{
+      font-size:1.2rem;color:var(--gold);
+      display:flex;justify-content:center;gap:3rem;margin-bottom:1rem;
+    }
+    .shajra-list{list-style:none;counter-reset:pir}
+    .shajra-item{
+      display:flex;align-items:flex-start;gap:1rem;
+      padding:1rem 1.2rem;
+      border-bottom:1px solid var(--rule);
+      transition:background .15s;
+    }
+    .shajra-item:hover{background:#fff}
+    .shajra-num{
+      font-family:'Amiri',serif;font-size:1.3rem;
+      color:var(--gold);min-width:36px;
+      text-align:center;line-height:1.6;
+      font-weight:700;
+    }
+    .shajra-name{
+      font-family:'Amiri',serif;font-size:1.05rem;
+      color:var(--ink);font-weight:700;line-height:1.8;
+    }
+    .shajra-suffix{
+      display:block;font-size:.8rem;
+      color:var(--faint);font-family:'Cairo',sans-serif;
+      font-weight:400;
+    }
+    .shajra-refrain{
+      font-size:.78rem;color:var(--faint);
+      margin-top:.1rem;font-style:italic;
+    }
+    .shajra-footer-verse{
+      background:var(--parch);
+      padding:1.5rem 2rem;margin:2rem 0;
+      font-family:'Amiri',serif;font-size:1.05rem;
+      color:var(--soft);text-align:center;line-height:2.2;
+      border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);
+    }
+    .shajra-signed{
+      text-align:center;padding:1.5rem;
+      font-size:.85rem;color:var(--faint);
+      border-top:1px solid var(--rule);margin-top:1rem;
+    }
+
+    /* ── WAZAIF & MUNAJAT PAGE ── */
+    .munajat-intro{
+      font-family:'Amiri',serif;font-size:1.05rem;
+      color:var(--soft);margin-bottom:1.5rem;text-align:center;
+      padding:1rem;border-bottom:1px solid var(--rule);
+    }
+    .wazifa-card{
+      background:#fff;border-radius:2px;
+      padding:1.5rem 2rem;margin-bottom:1.2rem;
+      border-right:4px solid var(--green);
+      box-shadow:0 1px 5px rgba(0,0,0,.05);
+    }
+    .wazifa-label{
+      display:inline-block;
+      background:var(--green);color:#fff;
+      font-size:.72rem;padding:.2rem .7rem;
+      letter-spacing:.1em;margin-bottom:.7rem;
+    }
+    .wazifa-arabic{
+      font-family:'Amiri',serif;font-size:1.15rem;
+      color:var(--navy);line-height:2.2;margin-bottom:.5rem;
+    }
+    .wazifa-urdu{
+      font-size:.85rem;color:var(--faint);
+      border-top:1px solid var(--rule);padding-top:.5rem;
+      line-height:1.9;
+    }
+    .munajat-verse{
+      background:#fff;padding:1.2rem 1.8rem;
+      margin-bottom:.8rem;
+      border-bottom:1px solid var(--rule);
+      display:grid;grid-template-columns:1fr auto;gap:1rem;
+      align-items:center;
+    }
+    .munajat-verse:last-child{border-bottom:none}
+    .munajat-text{
+      font-family:'Amiri',serif;font-size:1rem;
+      color:var(--soft);line-height:2;
+    }
+    .munajat-wasila{
+      font-size:.75rem;color:var(--gold);
+      text-align:left;min-width:140px;
+      line-height:1.7;
+    }
+    .section-wrap{
+      background:#fff;border-radius:2px;
+      box-shadow:0 1px 6px rgba(0,0,0,.05);
+      margin-bottom:2rem;overflow:hidden;
+    }
+
+    /* ── FOOTER ── */
+    footer{
+      background:var(--navy);color:#5a6a78;
+      text-align:center;padding:2rem 1rem;
+      font-size:.82rem;border-top:2px solid var(--gold);
+    }
+    footer span{color:var(--gold)}
+    footer p+p{margin-top:.4rem;font-size:.75rem}
+
+    @media(max-width:600px){
+      nav{padding:0 .8rem}
+      .nav-links li a{padding:.4rem .6rem;font-size:.78rem}
+      .hero-content{padding:2.5rem 1rem}
+      .hero-calli{width:180px;opacity:.08}
+      .verse-row{flex-direction:column;gap:.3rem}
+      .munajat-verse{grid-template-columns:1fr}
+      .munajat-wasila{text-align:right}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">چشتی صابری ٣١٢</span>
+  <ul class="nav-links">
+    <li><a href="#" class="active" onclick="showPage('adab',this)">آدابِ مریدین</a></li>
+    <li><a href="#" onclick="showPage('shajra',this)">شجرہ شریف</a></li>
+    <li><a href="#" onclick="showPage('wazaif',this)">وظائف و مناجات</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <svg class="hero-arabesque" viewBox="0 0 400 400" fill="none">
+    <g fill="#c9a84c">
+      <polygon points="200,20 215,80 270,60 235,110 280,140 220,140 200,200 180,140 120,140 165,110 130,60 185,80" opacity=".9"/>
+      <polygon points="200,380 215,320 270,340 235,290 280,260 220,260 200,200 180,260 120,260 165,290 130,340 185,320" opacity=".9"/>
+      <polygon points="20,200 80,185 60,130 110,165 140,120 140,180 200,200 140,220 140,280 110,235 60,270 80,215" opacity=".9"/>
+      <polygon points="380,200 320,185 340,130 290,165 260,120 260,180 200,200 260,220 260,280 290,235 340,270 320,215" opacity=".9"/>
+      <circle cx="200" cy="200" r="30" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity=".5"/>
+      <circle cx="200" cy="200" r="80" fill="none" stroke="#c9a84c" stroke-width=".8" opacity=".3"/>
+      <circle cx="200" cy="200" r="140" fill="none" stroke="#c9a84c" stroke-width=".5" opacity=".2"/>
+    </g>
+  </svg>
+  <svg class="hero-calli" viewBox="0 0 200 500" fill="none">
+    <path d="M100,10 C130,30 160,60 155,100 C150,140 120,150 130,190 C140,230 170,240 165,280 C158,320 120,335 115,375 C110,415 130,440 120,470 C115,485 100,490 100,490 C100,490 85,485 80,470 C70,440 90,415 85,375 C80,335 42,320 35,280 C30,240 60,230 70,190 C80,150 50,140 45,100 C40,60 70,30 100,10Z" fill="#e8dcc8" opacity=".9"/>
+    <path d="M100,40 C118,55 135,75 132,105 C129,135 110,145 118,175 C126,205 148,215 145,248 C141,282 112,295 109,325 C106,355 122,372 115,398 C111,412 100,418 100,418 C100,418 89,412 85,398 C78,372 94,355 91,325 C88,295 59,282 55,248 C52,215 74,205 82,175 C90,145 71,135 68,105 C65,75 82,55 100,40Z" fill="#1c2b3a" opacity=".5"/>
+    <circle cx="100" cy="200" r="6" fill="#c9a84c" opacity=".8"/>
+    <circle cx="100" cy="160" r="3.5" fill="#c9a84c" opacity=".6"/>
+    <circle cx="100" cy="240" r="3.5" fill="#c9a84c" opacity=".6"/>
+    <line x1="80" y1="200" x2="120" y2="200" stroke="#c9a84c" stroke-width="1.5" opacity=".5"/>
+    <path d="M90,18 Q100,8 110,18 Q105,25 100,22 Q95,25 90,18Z" fill="#c9a84c" opacity=".9"/>
+    <path d="M93,475 Q100,492 107,475 Q100,468 93,475Z" fill="#c9a84c" opacity=".7"/>
+  </svg>
+  <div class="hero-content">
+    <p class="hero-eyebrow">سلسلہ عالیہ چشتیہ صابریہ</p>
+    <h1 class="hero-title">چشتی صابری ٣١٢</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-address">
+      چک نمبر ٣١٢ گ ب<br>
+      تحصیل پیرمحل، ضلع ٹوبہ ٹیک سنگھ
+    </p>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════
+     PAGE 1 — آدابِ مریدین
+══════════════════════════════════════════ -->
+<div id="page-adab" class="page active">
+  <div class="container">
+    <h2 class="sec-title">آدابِ مریدین</h2>
+
+    <div class="content-block">
+      <p>تمام سلاسل کے اولیاء اکرام اور صالحین کا ادب و احترام لازم ھے اور ان میں فرق کرنا نا مناسب ھے۔ مرید کے لیے لازم ہے کہ مشِائخ کے مجلس میں خطروں کی حفاظت کرے۔ اُن کے حضور بلند اواز سے نہ بولے اور ان کے صُحبت میں کم گوئی کو بہترسمجھے بلکہ کلام میں سکوت (خاموشی) اختیار کرے۔</p>
+      <p>جس وقت وہ حال دریافت فرمائیں بالا ختصار (مختصراً) عرض کرے۔ لیکن معروض خلافِ شریعت نہ ہو جو فیضان میں حائل ہو سکے۔ جو انہیں پسند نہ ہو، وہ خود بھی ناپسند سمجھے۔ مشِائخ کے ساتھ بے ادبی خدا کی راہ میں مانع ہے۔</p>
+      <p>مرید طلبِ خدا میں راسخ العقیدہ (پُختہ عقیدے والا) ہو۔ خواه تمام عالم اس کے سَر پر شمشیر براں (ننگی تلوار) رکھے، یہاں تک کہ ہلاکت کو پہنچے مگر ثابت قدمی سے نہ پھرے۔ ایسا راسخ العقیدہ بے شک طالبِ صادق ہے اور ضرور منزلِ مقصود کو پہنچے گا۔ مولانا جامی (رح) فرماتے ہیں:</p>
+    </div>
+
+    <div class="verse-block">
+      <div class="verse-row">
+        <span>عاشق ثابت قدم آن کس بود کز کوی دوست</span>
+        <span>رُو نگرداند اگر شمشیر بارد بَر سرش</span>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <p>طالبِ مولا کے لیے ضروری ہے کہ طلبِ صادق اور عقیدۂ واثق (غیر متزلزل اور مضبوط عقیدہ) رکھے۔ شَیخ (مرشدِپاک) کو اپنے تمام اعزا (عزیز و اقارب) سے زیادہ عزیز اور بزرگ تر سمجھے۔ کیوں کہ سب کا رابطہ اپنی ذات تک محدود ہے لیکن شیخ کا رابطہ اِدھر اپنے مریدوں سے اور اُدهر مشائخِ سلاسل، ذاتِ رسالت ﷺ اور ذاتِ احدیت سے ہے۔ مولانا روم رح آداب کی اس طرح تلقین فرماتے ہیں:</p>
+    </div>
+
+    <div class="verse-block">
+      <div class="verse-row">
+        <span>از خدا خواہیم توفیقِ ادب</span>
+        <span>بے ادب محروم گشت از فضلِ رب</span>
+      </div>
+      <div class="verse-translation">ترجمہ: ہم اللہ سے ادب کی توفیق طلب کرتے ہیں کیونکہ بے ادب ہمیشہ فضلِ ربؔانی سے محروم رہتا ہے۔</div>
+      <br>
+      <div class="verse-row">
+        <span>نچہ بر تو آید از ظلماتِ غم</span>
+        <span>آٓں ز بیباکی و گستاخی است ہم</span>
+      </div>
+      <div class="verse-translation">ترجمہ: جو کچھ تجھ پر غم کی ظلمتیں آتی ہیں وہ سب تیری بے باکی اور گستاخی سے آتی ہیں۔</div>
+      <br>
+      <div class="verse-row">
+        <span>ہرکہ گستاخی کند اندر طریق</span>
+        <span>باشد اندر وادیٔ حیرت غریق</span>
+      </div>
+      <div class="verse-translation">ترجمہ: جو شخص طریقت کی راہ میں گستاخی کرتا ہے وہ ہمیشہ وادئ حیرت میں غرق رہتا ہے۔</div>
+      <br>
+      <div class="verse-row">
+        <span>بے ادب تنہا نہ خود را داشت بَد</span>
+        <span>بلکہ آتش در ہمہ آفاق زَد</span>
+      </div>
+      <div class="verse-translation">ترجمہ: بے ادب انسان نے نہ صِرف اپنے آپ کو خراب کیا، بلکہ اُس نے تمام اطراف میں آگ لگا دی۔</div>
+    </div>
+
+    <div class="content-block">
+      <p>بعض سالک محض بے ادبی کے سبب فیضانِ شَیخ سے محروم رہ جاتے ہیں بلکہ دوسرے کے لیے بھی نامرادی کا سبب بن جاتے ہیں۔ اس لیے ادب مقدم (سب سے پہلے) ہے۔ لہٰذا مرشد کو بزرگ شیخ سمجھ کر بیعت ہو اور اس کا لحاظ رکھے کہ کوئی بات خلافِ شریعت نہ ہو۔</p>
+      <p>کیونکہ یہ رشتہ طریقت ایسا پائدار ہوتا ہے کہ اس کا منقطع ہونا امِر محال ہے۔ بے ادبی وہ محرومی ہے کہ صحبتِ پیغمبر بھی فائدہ بخش نہیں ہوتی۔ اس لیے مرید کو لازم ہے کہ ہر حال میں شیخ کا ادب ملحوظ رکھے اور ہر طرح شیخ کی خدمتِ جانی، مالی اور بدنی میں بہ حسُن خوبی مصروف رہے۔ اسی لیے شیخ سعدی رح فرماتے ہیں:</p>
+    </div>
+
+    <div class="verse-block">
+      <div class="verse-row">
+        <span>ارادت نداری سعادت مجو</span>
+        <span>به چوگانِ خدمت بر آرد تو گو</span>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <p>یاد رہے کہ شیخ کی خدمت نہایت خلوص و محبت سے خالصتاً اللہ کے لیے کرے اور منصب و منفعتِ ظاهری پر نظر نہ رکھے۔ اپنے جملہ امور میں شیخ کے حکم کا منتظر رہے۔</p>
+      <p>جس طرح مرید پر ادب و خدمات کی پابندیاں ہیں اسی طرح بوقتِ بیعت مرید کے لیے ضروری ہے کہ شیخ کی اھلیت کا اندازہ کرے۔ اس کے لیے ابتدائی مراحل یہ ہیں کہ شیخ پابندشریعت ہو، سنت کا مُتبع ہو، اکلِ حلال و صِدقِ مقال پر قائم ہو۔ مولانا رومی رح فرماتے ہیں:</p>
+    </div>
+
+    <div class="verse-block">
+      <div class="verse-row">
+        <span>اے بسا ابلیس آدم روئے ہست</span>
+        <span>پس بہرد ستے نباید داد دست</span>
+      </div>
+      <div class="verse-translation">ترجمہ: نہ معلوم کتنے ایسے ابلیس ہیں جن کی شکل آدمیوں جیسی ھے پس ہر ہاتھ میں اپنا ہاتھ نہیں دینا چاہیے۔</div>
+      <br>
+      <div class="verse-row">
+        <span>جُہد کن تا پیر وعقل و دین شوی</span>
+        <span>تا جو عقلِ کُل توباطن بِیں شوی</span>
+      </div>
+      <div class="verse-translation">ترجمہ: کوشش کرو کہ تم ڈاڑھی اور سر کے نہیں بلکہ عقل اور دین کے بزرگ بنو تا کہ تم عقلِ کُل کی طرح باطن کو دیکھنے والے بن جاوٴ۔</div>
+      <br>
+      <div class="verse-row">
+        <span>این جہادِ اکبر است آں اصغراست</span>
+        <span>ھر دو کام ِ رُستم است و حیدر (رض) است</span>
+      </div>
+      <br>
+      <div class="verse-row">
+        <span>جُہدکُن اندر زمانہ روزِ چند</span>
+        <span>چند شب گِریہ بکُن باقی بخند</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE 2 — شجرہ شریف
+══════════════════════════════════════════ -->
+<div id="page-shajra" class="page">
+  <div class="container">
+    <h2 class="sec-title">شجرہ شریف خاندانِ چشتیہ صابریہ</h2>
+
+    <div class="shajra-intro">
+      <div class="haq"><span>حق</span><span>حق</span><span>حق</span></div>
+      <span class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِیْمِ</span>
+      <p>بسم اللہ دے معنے دیواں آکھ سنا — بسم اللہ وی آکھیا پہلاں آپ خدا</p>
+      <p>بسم اللہ دے آکھیاں ھویا کُل ظہور — بسم اللہ وی آکھدے حضرت پاک رسولﷺ</p>
+      <p>بسم اللہ نوں آکھ کے شجرہ خوب بنا — شجرہ چشتی پِیر دا ظاھر دَیٔیں بتا</p>
+    </div>
+
+    <ul class="shajra-list">
+      <!-- introductory refrain note -->
+      <li style="padding:.6rem 1.2rem;font-size:.8rem;color:var(--faint);border-bottom:1px solid var(--rule)">
+        ھُن خاص دل دی کراں بیان، سب پِیروں کے لے لے نام، احمد شاہ رح ھے لا توام، مشکل کیتی پیر آسان
+      </li>
+
+      <!-- Silsila chain entries -->
+      <li class="shajra-item">
+        <span class="shajra-num">١</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں محمد معظم چشتی صابری <span class="shajra-suffix">(میرے پیر)</span></span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٢</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں مقبول احمد چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٣</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں فقیر حسین چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٤</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں غلام قادر چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٥</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں مستان شاہ چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٦</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں جوت علی شاہ چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٧</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں بابا نہال شاہ چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٨</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں احمد علی شاہ چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٩</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں بہادر علی شاہ چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">١٠</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں کرم علی شاہ چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">١١</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں سید میراں بھیکھ چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">١٢</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں شاہ ابوالمعالی چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">١٣</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں محمد داؤد صاحب گنگوھی چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">١٤</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں محمد صادق سالارِ قافلہ چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">١٥</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں شاہ ابو سعید گنگوھی چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">١٦</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں نظام الدین بلخی چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">١٧</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں جلال الدین اکبر تھانیسری چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">١٨</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں قطبِ عالم عبدالقدوس گنگوھی چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">١٩</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں شاہ محمد جی عبدِحق چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٢٠</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں شاہ احمد عارف الحق چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٢١</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں مخدوم عبدالحق ردولوی چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٢٢</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں مخدوم جلال الدین محمود کبیرالاولیاء پانی پتی چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٢٣</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں شمش الدین شمس الارض تُرک پانی پتی چشتی صابری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٢٤</span>
+        <div>
+          <span class="shajra-name">بادشاہِ دوجہاں مخدوم علاوالدین علی احمد صابر کلیری چشتی رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٢٥</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں بابا فرید الدین مسعود گنج شکر چشتی رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٢٦</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں خواجہ قطب الدین بختیار کاکی اوشی چشتی رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٢٧</span>
+        <div>
+          <span class="shajra-name">خواجہءخواجگان معین الدین حسن چشتی رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٢٨</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں خواجہ عثمان ھارونی چشتی رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٢٩</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں حاجی شریف زندنی چشتی رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٣٠</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں حاجی قطب الدین مودود چشتی رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٣١</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں شاہ ابو محمد یوسف چشتی رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٣٢</span>
+        <div>
+          <span class="shajra-name">حضرت جناب سائیں ابو احمد ابدال چشتی رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٣٣</span>
+        <div>
+          <span class="shajra-name">حضرت جناب خواجہ ابو اسحٰق شامی چشتی رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٣٤</span>
+        <div>
+          <span class="shajra-name">حضرت جناب خواجہ علو ممشاد دینوری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٣٥</span>
+        <div>
+          <span class="shajra-name">حضرت جناب شاہ ابوھبَیرہ امین الدین بصری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٣٦</span>
+        <div>
+          <span class="shajra-name">حضرت جناب خواجہ حُذَیفہ مرعشی رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٣٧</span>
+        <div>
+          <span class="shajra-name">حضرت جناب خواجہ ابراھیم بن ادھم رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٣٨</span>
+        <div>
+          <span class="shajra-name">حضرت جناب خواجہ فضیل بن عیاض رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٣٩</span>
+        <div>
+          <span class="shajra-name">حضرت جناب خواجہ عبدالواحد بن زید رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٤٠</span>
+        <div>
+          <span class="shajra-name">حضرت جناب خواجہ حسن بصری رح</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item">
+        <span class="shajra-num">٤١</span>
+        <div>
+          <span class="shajra-name">مولا علی مُشکل کشا سلطانِ اولیاء رضی اللہ عنہ</span>
+          <span class="shajra-refrain">مشکل کیتی پیر آسان</span>
+        </div>
+      </li>
+      <li class="shajra-item" style="background:var(--parch)">
+        <span class="shajra-num" style="color:var(--navy);font-size:1.6rem">☆</span>
+        <div>
+          <span class="shajra-name" style="color:var(--navy);font-size:1.15rem">اُنکے پیر حضرت محمد صلی اللہ علیہ وسلم</span>
+          <span class="shajra-suffix" style="color:var(--soft)">صِفتاں جس میں دونوں مُسَلّم — احد احمدﷺ وِچ فرق نہ جان — مشکل کیتی پیر آسان</span>
+          <span class="shajra-suffix" style="color:var(--gold);margin-top:.5rem;display:block;font-family:'Amiri',serif;font-size:.95rem;line-height:2">
+            درُود بَر محمدﷺ، صلوٰۃ بَر علیؑ<br>
+            مسجد میں محمدﷺ، میدان میں علیؑ<br>
+            کُل دفترِ محمدﷺ، لوح لشکرِ علیؑ<br>
+            جن کی مدد علیؑ، اُن کی کُل بلا ٹَلی<br>
+            یا علیؑ، یا علیؑ، یا علیؑ، یا علیؑ
+          </span>
+        </div>
+      </li>
+    </ul>
+
+    <div class="shajra-footer-verse">
+      شجرہ چشتی پِیر دا پڑھے صبح اِک بار — ھر میدانوں فتح ھے کدی نہ آوے ھار<br>
+      شجرہ چشتی پیر پڑھے صبح و شام — منطق کُھلّے اوس دا ھووے صاحب گیان
+    </div>
+
+    <div class="shajra-signed">
+      انجامِ کار قبلہ سائیں مقبول احمد چشتی رح صابری رح برکاتہم را دریں سلسلہ عالیہ<br>
+      خاکپائے خواجگانِ چشت رح — <span style="color:var(--gold)">محمد معظم چشتی عفی عنہ</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE 3 — وظائف و مناجات
+══════════════════════════════════════════ -->
+<div id="page-wazaif" class="page">
+  <div class="container">
+
+    <h2 class="sec-title">وظائف</h2>
+
+    <div class="section-wrap">
+      <div class="wazifa-card" style="border-color:var(--faint)">
+        <span class="wazifa-label" style="background:var(--faint)">تعوذ</span>
+        <p class="wazifa-arabic">أَعُوذُ بِاللَّهِ مِنَ الشَّيطَانِ الرَّجِيمِ</p>
+      </div>
+
+      <div class="wazifa-card" style="border-color:var(--faint)">
+        <span class="wazifa-label" style="background:var(--faint)">تسمیہ</span>
+        <p class="wazifa-arabic">بِسمِ اللّهِ الرَّحمنِ الرَّحیمِ</p>
+      </div>
+
+      <div class="wazifa-card">
+        <span class="wazifa-label">کلمہ طیبہ</span>
+        <p class="wazifa-arabic">لَا إلَهَ إلاَّ اللَّهُ مُحَمَّدٌ رَسُولُ اللهِ</p>
+        <p class="wazifa-urdu">اللہ کے سوا کوئی معبود نہیں، حضرت محمدﷺ اللہ کے رسول ھیں</p>
+      </div>
+
+      <div class="wazifa-card" style="border-color:#8b6914">
+        <span class="wazifa-label" style="background:#8b6914">استغفار</span>
+        <p class="wazifa-arabic">أَسْتَغْفِرُ اللهَ رَبِّيْ مِنْ كُلِّ ذَنْبٍ وَّأَتُوْبُ إِلَيْهِ</p>
+        <p class="wazifa-urdu">میں اللّٰہ سے اپنے تمام گناہوں کی بخشش مانگتا ہوں جو میرا رب ہے اور اسی کی طرف رجوع کرتا ہوں</p>
+      </div>
+
+      <div class="wazifa-card" style="border-color:#2d5a7a">
+        <span class="wazifa-label" style="background:#2d5a7a">درود جمالی</span>
+        <p class="wazifa-arabic">اَللَّھُمَّ صَلِّی وَسَلِّمۡ وَ بَارِکۡ عَلٰی سَیِّدِنَا وَ مَوۡلَانَا مُحَمَّدٍ وَاٰلِہ وَ اَصۡحَابِہٖ بِعَدَدِ قَدۡرِ حُسۡنِہ وَ جَمَالِہٖ ؕ</p>
+        <p class="wazifa-urdu">اے الہی درود و سلام بھیج ھمارے سردار اور آقا محمدﷺ پر، آپﷺ کی آل پر، آپﷺ کے اصحاب پر، جتنا آپﷺ کا حُسن و جمال ھے۔</p>
+      </div>
+
+      <div class="wazifa-card" style="border-color:#5a2d82">
+        <span class="wazifa-label" style="background:#5a2d82">درود تُنجِینا</span>
+        <p class="wazifa-arabic">اَللَّھُمَّ صَلِّی وَسَلِّمۡ وَ بَارِکۡ عَلٰی سَیِّدِنَا وَ مَوۡلَانَا مُحَمَّدٍ صَلَوٰةً تُنۡجِیْنَا بِہَا مِنْ جَمِیْعِ الْاَحۡوَالِ وَالْاٰفَاتِ وَتَقْضِیْ لَنَا بِھا جَمِیْعَ الْحَاجَاتِ وَتُطَہِّرُنَا بِہَا مِنْ جَمِیْعِ السَّیِّئَاتِ وَتَرْفَعُنَا بِہَا اَعْلَی الدَّرَجَاتِ وَتُبَلِّغُنَا بِہَا اَقْصَی الْغَایَاتِ مِنْ جَمِیْعِ الْخَیْرَاتِ فِی الْحَیَاۃِ وَبَعْدَ الْمَمَاتِ ؕ</p>
+        <p class="wazifa-urdu">اے الہی ھمارے سردار اور آقا حضرت محمدﷺ پر درود وسلام بھیج اور برکت فرما اور اس کے ذریعے تو ھمیں تمام خوف اور آفات سے نجات فرما اور ھماری تمام حاجتوں کو پورا فرما اور پاک فرما دے تمام گناھوں سے اور اعلیٰ سے اعلیٰ درجات عطا فرما اور بہترین بھلائیوں سے نواز دے اس زندگی میں اور موت کے بعد۔</p>
+      </div>
+    </div>
+
+    <h2 class="sec-title">مناجات</h2>
+    <p class="munajat-intro">
+      شجرہ شریف خاندانِ چشتیہ رح صابریہ رح رضوان اللہ علیہم اجمعین<br>
+      <strong>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِیْمِ</strong>
+    </p>
+
+    <div class="section-wrap">
+
+      <div class="munajat-verse">
+        <p class="munajat-text">اے میرے مولا میرے اللہ اے میرے خدا — اپنے لطف و فضل سے مقبول کر میرے دُعا</p>
+        <span class="munajat-wasila">سید عالم محمد مصطفٰیﷺ کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">طے کرادے منزلیں عرفان کی فرما مچھ پہ فضل — عشق اپنا دے مجھے اور الفتِ شاہِ رُسلﷺ</p>
+        <span class="munajat-wasila">حضرت مولا علیؓ مشکل کشا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">دے مجھے خُلقِ حسن ایسی بصیرت کر عطا — روز و شب جس سے شہا دیکھا کروں جلوہ ترا</p>
+        <span class="munajat-wasila">شَیخ حَسن بصریؓ شہِ شاہ و گدا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">دے مجھے شوقِ عبادت درد کر اپنا عطا — نورِوحدت سے خدایا کر منور دل میرا</p>
+        <span class="munajat-wasila">عبدالواحد ابنِ زید باخدا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">دُور کر دل سے میرے خودبینی و مکروریا — فضل سے مجھ کو بنا دے مُتقی و پارسا</p>
+        <span class="munajat-wasila">خواجہ حضرت فضیل پارسا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">مجھ کو مُلکِ فقر میں حاصل ھو اعلیٰ مرتبہ — ھو نہ دنیا کا مجھے مطلوب جاہ و دبدبہ</p>
+        <span class="munajat-wasila">حضرت ابراھیم ادھم بادشاہ کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">حُبِؔ دیں عشقِ رسول اللہﷺ ھو دل کو عزیز — خود کو میں پہچان لوں دے مُجھ کو وہ عقل و تمیز</p>
+        <span class="munajat-wasila">شَیخ سدید الدین امامِ اولیاء کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">میرے دل پر ھوں نہ قابض نفس و شیطانِ لعین — نُورِعرفان کی امانت کا بنا اس کو امین</p>
+        <span class="munajat-wasila">شَیخ امین الدین عارف مقتدا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">جلوہِ احمدﷺ دکھا کر میرے دل کو شاد کر — کوئی بھی شے اے خدا اس سے نہیں محبوب تر</p>
+        <span class="munajat-wasila">شَیخ علو ممشاد ذاکر باخدا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">مُجھ کو زینت دے لباسِ اِتقاء و زُہد سے — رکھ ثابت قدم شریعت پر مجھے</p>
+        <span class="munajat-wasila">شاہ ابو اسحٰق شامی چشتیا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">فضل سے تیرے ھو ایسا صاف دل کا آئینہ — رُوئے احمدﷺ یا الہی اس میں ھو جلوہ نما</p>
+        <span class="munajat-wasila">شَیخ ابو احمد شاہِ صِدق و صفا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">میرے دل کو اے خدا تیرے رضا کی ھو طلب — یا محمد مصطفیٰﷺ وِردِ زباں ھو روز و شب</p>
+        <span class="munajat-wasila">خواجہ حضرت بُؤ محمد شاہ رضا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">نفسِ امؔارہ عدُوؔ دین پہ نصرت دے مجھے — دے وہ قوت جس سے یہ دائم رھے تابع میرے</p>
+        <span class="munajat-wasila">ناصرالدین پیشوا یوسف لِقا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">دُور کر میرے دل سے سب باطل خیال — اپنی اُلفط کا پلا دے مجھ کو ساغر ذوالجلال</p>
+        <span class="munajat-wasila">قطب الدین مودود چشتی ذوالعطا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">ھو میرے دل میں سدا بحرِحقیقت مَوجزن — مجھ کو حاصل ھو شرف از اُلفتِ شاہِ یمن</p>
+        <span class="munajat-wasila">شہِ شریف زندنی حق نما کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">ھوں گنہگار سیاہ کار خطاوار اور بُرا — شرم رکھنا روزِمحشر ھے یہ تُجھ سے التجا</p>
+        <span class="munajat-wasila">خواجہ عثمان با شرم و حیا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">اے میرے آقا میرے مالک میرے حامی و مُعین — حُبِؔ احمدﷺ دے مجھے اور دولتِ ایمان و دین</p>
+        <span class="munajat-wasila">شہ معین الدین حبیبِ کِبریا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">راہِ دین و معرفت میں رھنمائی کر میری — بوئے احمدﷺ سے معطر کر میرے دل کی کلی</p>
+        <span class="munajat-wasila">خواجہ قطب الدین کاکی رھنما کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">دے حلاوت میرے دل کو اپنی قندِ عشق سے — اپنی اُلفت کی چکھا دے چاشنی یارب مجھے</p>
+        <span class="munajat-wasila">شہِ فریدالدین زہدالانبیاء کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">دُور رکھنا مجھ سے اے مالک فِشارِگور کو — حشر میرا روزِمحشر صابروں کے ساتھ ھو</p>
+        <span class="munajat-wasila">شَیخ علاؤالدین صابر باخدا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">جان شعاعِ شمسِ دین سے نور پاوے اے خدا — دل کو نورانی بنا دے مثلِ مہرِ پُرضیاء</p>
+        <span class="munajat-wasila">خواجہ شمس الدین شمسِ دوسرا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">دے مجھے جاہ و جلال اور ظلم دنیا سے پناہ — بخش دے یا رب کبیرہ و صغیرہ سب گناہ</p>
+        <span class="munajat-wasila">شہِ جلال الدین کبیرالاولیاء کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">ضُوءِ مہرِحُسن سے کردے منور دل میرا — چھوڑکر ناحق کو حق پر رھوں قائم سدا</p>
+        <span class="munajat-wasila">خواجہ عبدالحق ردولی پُرضیاء کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">کر دے میرے دل پہ ظاہر اے خدا اسرارِحق — دل سے بشرہ سے زباں سے ھوں عیاں انوارِحق</p>
+        <span class="munajat-wasila">حضرت احمد عبدالحق مردِ خدا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">دل میں ھو تیری ولاء اور لب پہ ھو اظہارِ حق — جس طرف دیکھوں نظر آئیں مجھے انوارِ حق</p>
+        <span class="munajat-wasila">شہ محمد عبدِحق شاہِ ولاء کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">ھو میسؔر مجھ کو عیش و راحتِ دارالبقا — مجلسِ قُدسی میں میرا بھی گذر ھو اے خدا</p>
+        <span class="munajat-wasila">عبدِقدوس شاہِ مُلکِ بقا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">ھے تمنائے دلی دکھلا دے تو اپنا جمال — ملکِ دین میں بخش مجھ کو عزت و جاہ و جلال</p>
+        <span class="munajat-wasila">شہ جلال الدین عارف فخرالاصفیاء کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">دین و ایمان و حیا و حُبِ احمدﷺ کر عطا — معرفت کے نُور معمور کر سینہ میرا</p>
+        <span class="munajat-wasila">شہِ نظام الدین عارف راھنما کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">اے خدا مجھ کو دکھا رحمت سے وہ یوم سعید — روضہِ اقدسِ رسولِ پاک ﷺ کی حاصل ھو دید</p>
+        <span class="munajat-wasila">بو سعید حق نما پیرِ ھدیٰ کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">اپنے احسان و کرم سے کر عطا رزقِ حلال — اُلفتِ خیرالوراﷺ دے مجھ کو اور صِدقِ مقال</p>
+        <span class="munajat-wasila">شہِ محمد صادق اھلِ وفا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">ھو تیرے دَر تک رسائی ھو دید تیری نصیب — نقشِ دل نامِ محمدﷺ ھو اے مجیب</p>
+        <span class="munajat-wasila">حضرت شَیخ محمد حق رسا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">میں غریب و ناتواں ھوں کر مدد اے کار ساز — اور ریا وعُجب سے مجھ کو بچا اے بے نیاز</p>
+        <span class="munajat-wasila">حضرت خواجہ غریب بے ریا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">ھے دعا بحرِ سخاوت کا شناور میں بنوں — دل میں ھو پیدا نہ میرے الفتِ دنیا و دُوں</p>
+        <span class="munajat-wasila">شہِ محمد اعظم اھلِ وفا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">خُوئے احمدﷺ دے مجھے خوش خلق اور خوش خُو بنا — اے میرے مولا دکھا اپنا جمال دلرُبا</p>
+        <span class="munajat-wasila">خواجہ حضرت جمال خوش ادا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">آتشِ عشقِ محمدﷺ سے ھو حاصل دل کو نور — دے حیاتِ جاودانی میں مجھے عیش و سرور</p>
+        <span class="munajat-wasila">اے خدا شاہِ حیات مہِ لِقا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">کر عطا حُبِؔ محمد مصطفیٰﷺ و حُبِؔ علیؓ — اُلفتِ صدیقؓ و بوُبکرؓ و عمرؓ و عثمانِ غنیؓ</p>
+        <span class="munajat-wasila">شاہِ غلام با علی پارسا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">جُز تیرے کس سے کہوں یا رب میں اپنا مُدعا — اُلفتِ شاہِ دوعالمﷺ کر میرے دل کو عطا</p>
+        <span class="munajat-wasila">شہِ امیرالدین شہ شاہِ خدا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">ھادی و رھبر نہیں تُجھ سا حمایت کر میری — اپنے لُطف و فضل سے مجھ کو بنا دے متقی</p>
+        <span class="munajat-wasila">شاہِ امام الدین ھادی صوفیاء کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">اپنا شیدائی بنا لے دے مجھے اپنی ولاء — تیری اطاعت سے دلِ بیتاب کو آئے مزا</p>
+        <span class="munajat-wasila">شہِ فصیح الدین مقتولِ ولاء کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">دل میرا ھو صاف اے میرے مولا مثالِ آئینہ — روز و شب اس میں نظر آئے جلوہ تیرا</p>
+        <span class="munajat-wasila">رُکن الدین معبود بخش شہِ ھدیٰ کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">دل میرا مسُرور ھو ایسا مئے تسلیم سے — کچھ غرض اِس کو نہ ھو دنیا کے خوف و بیم سے</p>
+        <span class="munajat-wasila">حاجی تسلیم احمد پیشوا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">دل میں پیدا ھو محبتِ حضرت خیرالانامﷺ — ھاتھ پھیلائے ھے آقا صابری تیرا غلام</p>
+        <span class="munajat-wasila">شہ محمد عبداللہ پِیرِ ھدیٰ کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">طے کر دے منزلیں عرفان کی ربِؔ کریم — اور فرما فضل مجھ پر اے خداوندِ رحیم</p>
+        <span class="munajat-wasila">صوفی فضل کریم پیشوا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">آ پڑا دَر پر تیرے ھر طرف سے ھوں ملول — کر تُو اِن ناموں کی برکت سے دُعا میری قبول</p>
+        <span class="munajat-wasila">یا الہی اپنی ذاتِ کبریا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">ان بزرگوں کے تئیں یارب غرض ہر کار میں — کر شفاعت کا وسیلہ اپنے تو دربار میں</p>
+        <span class="munajat-wasila">مجھ ذلیل و خوار مسکین و گدا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">کر دیا اِس عقل نے بے عقل و دیوانہ مجھے — کر ذرا اس ھوش سے بے ھوش و مستانہ مجھے</p>
+        <span class="munajat-wasila">یا حق اپنے عاشقانِ با وفا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">نہ فقیری چاھتا ھوں نہ امیری کی طلب — نہ عبادت نہ زُہد نہ خواھشِ علم و ادب</p>
+        <span class="munajat-wasila">دردِ دل پر چاھیے مجھ کو خدا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">گرچہ یہ ھدیہ میرا نا قابلِ قبول ھے — پر جو ھو مقبول کیا رحمت سے تیری دُور ھے</p>
+        <span class="munajat-wasila">کشتگانِ تیغِ تسلیم و رضا کے واسطے</span>
+      </div>
+
+      <div class="munajat-verse">
+        <p class="munajat-text">یوں دُعا کرتا ھے تُجھ سے یہ تیرا عاجز ذلیل — بخش دے جُملہ خطائیں اس کی اے ربِؔ جلیل</p>
+        <span class="munajat-wasila">کُل شہداء و اولیاء و انبیاء کے واسطے</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p><span>چشتی صابری ٣١٢</span> — چک نمبر ٣١٢ گ ب، تحصیل پیرمحل، ضلع ٹوبہ ٹیک سنگھ</p>
+  <p>سلسلہ عالیہ چشتیہ صابریہ &nbsp;|&nbsp; رضوان اللہ علیہم اجمعین</p>
+</footer>
+
+<script>
+  function showPage(id, el) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.getElementById('page-' + id).classList.add('active');
+    el.classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    return false;
+  }
+</script>
+</body>
+</html>
